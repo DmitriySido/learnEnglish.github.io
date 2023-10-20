@@ -237,17 +237,16 @@ nextButtonWord.addEventListener('click', function(){
       const wordWrapper = document.querySelector('.word__wrapper')
       renderComment(wordWrapper)
       let comment = document.querySelector('.comment')
-      comment.classList.add('comment--active')
-      // setTimeout(() => {
-      //   comment.classList.add('comment--active')
-      // }, 100)
-      // setTimeout(() => {
-      //   comment.classList.remove('comment--active')
-      // }, 2000)
+      setTimeout(() => {
+        comment.classList.add('comment--active')
+      }, 100)
+      setTimeout(() => {
+        comment.classList.remove('comment--active')
+      }, 2000)
   
-      // setTimeout(() => {
-      //   comment.remove()
-      // }, 2500)
+      setTimeout(() => {
+        comment.remove()
+      }, 2500)
     }
 
   //Обнуление

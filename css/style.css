@@ -1047,9 +1047,9 @@ body{
 
   /*Comment*/
   .comment{
-    width: 300px;
-    top: 55%;
-    right: -3%;
+    width: 215px;
+    top: 10%;
+    right: 1%;
     transition: all .4s cubic-bezier(.42,.44,.24,1.37);
     opacity: 0;
     transform: scale(0.8);
@@ -1057,7 +1057,7 @@ body{
 
   .comment--active{
     opacity: 1;
-    right: 19%;
+    right: 1%;
     transform: scale(1.0);
   }
 
@@ -1067,22 +1067,22 @@ body{
   }
 
   .comment-img{
-    width: 180px;
+    width: 120px;
   }
 
   .comment-text{
     line-height: 1.2;
-    padding: 40px 10px;
+    padding: 30px 0px;
   }
 
   .comment-text__wrapper{
     position: relative;
-    padding: 15px 5px;
+    padding: 5px 5px;
     background-color: #fff;
     color: #383838;
     border-radius: 10px;
     text-align: center;
-    font-size: 20px;
+    font-size: 16px;
     margin-left: 10px;
   }
 
