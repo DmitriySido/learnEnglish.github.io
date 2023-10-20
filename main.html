@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/style.css">
+
+	<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700&family=Montserrat+Alternates:wght@600&family=Montserrat:wght@200;400;500;700;900&display=swap"rel="stylesheet">
+
+	<title>Learn English 0.6 Main</title>
+</head>
+<body>
+	<div class="loading-screen">
+		<div class="loading__progress-bar__wrapper">
+			<div class="loading__progress-bar">
+				<span class="loading__procent">0%</span>
+				<h2 class="loading__text">Загружаем...</h2>
+				<div class="loading__progress-line_bg">
+					<div class="loading__progress-line" id="loading__progress-line">
+						
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<h1 class="loading-clue">Thanks a bunch - означает ‘Большое спасибо’</h1>
+	</div>
+
+	<div class="overlay">
+		<div class="alerts">
+			<h2 class="alert__title">Ваш текущий прогресс будет сохранён до ближайшего выхода</h2>
+			<h3 class="alert__suptitle">Завершить?</h3>
+			<button class="alert-ok">Да</button>
+		</div>
+	</div>
+
+  <div class="word__wrapper"></div>
+
+	<main class="main-wrapper">
+		<nav class="navigation">
+			<a class="navigation__logo">LogoType</a>
+
+			<ul class="navigation__list">
+				<li class="navigation__item">
+					<button class="navigation__button navigation__button--active">Обучение</button>
+				</li>
+				<li class="navigation__item">
+					<button class="navigation__button">Задания</button>
+				</li>
+				<li class="navigation__item">
+					<button class="navigation__button">Магазин</button>
+				</li>
+				<li class="navigation__item">
+					<button class="navigation__button">Профиль</button>
+				</li>
+				<li class="navigation__item">
+					<button class="navigation__button">Ещё</button>
+				</li>
+			</ul>
+		</nav>	
+		<div class="container">
+			<section class="level level-1">
+				<h1 class="level__title">Уровнь А1 - Начинающий</h1>
+
+				<div class="task__list">
+					<button class="task__button" id="translation-of-words">
+						<h3 class="task__title">Перевод Слов</h3>
+						<span class="counter word-translation__counter">0/15</span>
+					</button>
+
+					<button class="task__button" id="spelling">
+						<h3 class="task__title">Орфография</h3>
+						<span class="spelling-counter counter">0/20</span>
+					</button>
+
+					<button class="task__button" id="phrase-translation">
+						<h3 class="task__title">Перевод Фраз</h3>
+						<span class="phrase-translation__counter counter">0/10</span>
+					</button>
+
+					<button class="task__button" id="remember-text">
+						<h3 class="task__title">Текста</h3>
+						<span class="text-remember__counter counter">0/7</span>
+					</button>
+
+					<button class="task__button task__button-empty" disabled>
+						<h3 class="task__title">Недоступно</h3>
+					</button>
+
+					<button class="task__button task__button-empty" disabled>
+						<h3 class="task__title">Недоступно</h3>
+					</button>
+				</div>
+			</section>
+		</div>
+	</main>
+
+	<section class="section-phrases section-hidden">
+			<header class="section__header">
+				<button class="exit-button">Exit
+					<img class="exit-icon" src="pictures/icons/exit-button.png" alt="Exit">
+				</button>
+
+				<div class="progress-bar__wrapper">
+					<div class="progress-bar">
+						<div class="progress-line_bg">
+							<span class="procent">0%</span>
+							<div class="progress-line" id="progress-line"></div>
+						</div>
+					</div>
+				</div>
+			</header>
+
+			<div class="phrases__wrapper">
+				<h1 class="translate-text">Переведите текст</h1>
+				<h2 class="translate-app"></h2>
+
+				<button class="button next-button__phrases">Продолжить</button>
+			</div>
+	</section>
+
+	<section class="section-word section-hidden">
+		<header class="section__header">
+			<button class="exit-button exit-button__word">Exit
+				<img class="exit-icon" src="pictures/icons/exit-button.png" alt="Exit">
+			</button>
+
+			<div class="progress-bar__wrapper-word">
+				<div class="progress-bar__word">
+					<div class="progress-line_bg__word">
+						<span class="procent__word">0%</span>
+						<div class="progress-line__word" id="progress-line__word"></di>
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<div class="word__wrapper">
+			<h1 class="translate-word__text">Выберете правильный перевод слова</h1>
+			<h2 class="translate-word"></h2>
+      
+			<button class="button next-button__word">Продолжить</button>
+		</div>
+	</section>
+
+  <section class="section-spelling section-hidden">
+    <header class="section__header">
+			<button class="exit-button exit-button__word">Exit
+				<img class="exit-icon" src="pictures/icons/exit-button.png" alt="Exit">
+			</button>
+
+			<div class="progress-bar__wrapper-word">
+				<div class="progress-bar__word">
+					<div class="progress-line_bg__word">
+						<span class="procent__spelling procent__word">0%</span>
+						<div class="progress-line__word" id="progress-line__spelling"></di>
+					</div>
+				</div>
+			</div>
+		</header>
+
+    <div class="word__wrapper spelling__wrapper">
+			<h1 class="translate-word__text">Переведите слово</h1>
+			<h2 class="spelling-word"></h2>
+
+      <div class="wrapper-to-spelling__word">
+        <!-- <button class="spelling__letter-button--tap">A</button> -->
+      </div>
+
+      <div class="spelling__letter-wrapper">
+        <!-- <li class="spelling__letter-item">
+          <button class="spelling__letter-button">A</button>
+        </li> -->
+      </div>
+      
+			<button class="button next-button__spelling" disabled>Продолжить</button>
+		</div>
+  </section>
+
+  <section class="section-text section-hidden">
+    <header class="section__header">
+			<button class="exit-button exit-button__text">Exit
+				<img class="exit-icon" src="pictures/icons/exit-button.png" alt="Exit">
+			</button>
+
+			<div class="progress-bar__wrapper-text progress-bar--hidden">
+				<div class="progress-bar__text">
+					<div class="progress-line_bg__text">
+						<span class="procent__text">0%</span>
+						<div class="progress-line__text" id="progress-line__text"></di>
+					</div>
+				</div>
+			</div>
+		</header>
+    
+    <!-- <div class="section-text__content">
+      <h2 class="section-text__subject">My Wonderful Family</h2>
+      <p class="section-text__text">
+        I live in a house near the mountains.
+        I have two brothers and one sister, and I was born last.
+        My father teaches mathematics, and my mother is a nurse at a big hospital.
+        My brothers are very smart and work hard in school. My sister is a nervous girl,
+        but she is very kind. My grandmother also lives with us.
+        She came from Italy when I was two years old. She has grown
+        old, but she is still very strong. She cooks the best food!
+        My family is very important to me. We do lots of things
+        together. My brothers and I like to go on long walks
+        in the mountains. My sister likes to cook with my grandmother.
+        On the weekends we all play board games together.
+        We laugh and always have a good time.
+        I love my family very much.
+      </p>
+      
+      <div class="section-text__button-wrapper">
+        <button class="button start-button">Перейти к тесту</button>
+      </div>
+   </div> -->
+   
+   <div class="answer-options__container answer-options--hidden">
+    <h3 class="answer-question-text"></h3>
+   </div>
+  </section>
+
+	<script src="js/phrases.js"></script>
+	<script src="js/word.js"></script>
+  <!-- <script src="js/texts.js"></script> -->
+  <script src="js/spelling.js"></script>
+
+	<script src="js/loading.js"></script>
+</body>
+</html>
