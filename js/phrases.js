@@ -80,8 +80,7 @@ let translateAppLength = translateApp.textContent.split(' ')
 translateApp.textContent = item.en
 
 //Создаем обертку для кнопок со словами
-let wrapperWordsTranslate = document.createElement('div')
-wrapperWordsTranslate.className = 'wrapper-to-translate'
+let wrapperWordsTranslate = document.querySelector('.wrapper-to-translate')
 
 //Рандомная последовательность сгинерированных кнопок
 const shuffle = ((arrays) => arrays.sort(() => Math.random() - 0.5))
@@ -104,12 +103,13 @@ function createCeill(application){
 		comparison(trnaslateString)
 		wrapperWordsTranslate.append(word)
 	}
-	translateApp.after(wrapperWordsTranslate)
+	// translateApp.after(wrapperWordsTranslate)
 }
 
 //Удаление всех ячеек со словами
 function removeAllCeills(){
-	wrapperWordsTranslate.remove()
+	// wrapperWordsTranslate.remove()
+  console.log('yes')
 }
 
 //Удаление слов
@@ -131,7 +131,6 @@ function removeCeill(thisWord, thisButton){
 
 //Создание кнопок в зависимости от приложения
 let wrapperWithWord = document.createElement('div')
-wrapperWithWord.className = 'window-with-words'
 
 function createWord(app){
 	let word
@@ -147,7 +146,9 @@ createWord(translateAppLength)
 
 //Удаление кнопок
 function removeWord(){
-	wrapperWithWord.remove()
+	// wrapperWithWord.remove()
+  document.querySelectorAll('.word').forEach(button => button.remove())
+  document.querySelectorAll('.word-tap').forEach(buttonTap => buttonTap.remove())
 }
 
 //Обработка нажатия на кнопку со словом

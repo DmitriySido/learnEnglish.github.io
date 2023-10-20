@@ -128,8 +128,8 @@ renderRandomButton()
 const removeWordButtons = (() => windowWithWordButtons.remove())
 
 //Нажатие на кнопку
-const wrapperWithWordss = document.createElement('div')
-wrapperWithWordss.className = 'wrapper-to-translate__word'
+const wrapperWithWordss = document.querySelector('.wrapper-to-translate__word')
+
 
 function wordButtonListener(){
   const allButtonsWord = document.querySelectorAll('.translate__word--word')
@@ -170,7 +170,11 @@ function wordButtonListener(){
 wordButtonListener()
 
 //удаление кнопок с ответами
-const removeButton = (() =>wrapperWithWordss.remove())
+// const removeButton = (() =>wrapperWithWordss.remove())
+const removeButton = function(){
+  document.querySelectorAll('.translate__word--word').forEach(button => button.remove())
+  document.querySelectorAll('.translate__word--word-tap').forEach(button => button.remove())
+}
 
 if(progressData.wordProgress < 15){
 	mainWordButton.disabled = false
@@ -233,16 +237,17 @@ nextButtonWord.addEventListener('click', function(){
       const wordWrapper = document.querySelector('.word__wrapper')
       renderComment(wordWrapper)
       let comment = document.querySelector('.comment')
-      setTimeout(() => {
-        comment.classList.add('comment--active')
-      }, 100)
-      setTimeout(() => {
-        comment.classList.remove('comment--active')
-      }, 2000)
+      comment.classList.add('comment--active')
+      // setTimeout(() => {
+      //   comment.classList.add('comment--active')
+      // }, 100)
+      // setTimeout(() => {
+      //   comment.classList.remove('comment--active')
+      // }, 2000)
   
-      setTimeout(() => {
-        comment.remove()
-      }, 2500)
+      // setTimeout(() => {
+      //   comment.remove()
+      // }, 2500)
     }
 
   //Обнуление
