@@ -52,6 +52,22 @@ const wordsArray = new Map([
   ['Mother', 'Мама'],
   ['Animal', 'Животное'],
   ['World', 'Мир'],
+
+  ['air', 'воздух'],
+  ['play', 'играть'],
+  ['small', 'маленький'],
+
+  ['end', 'конец'],
+  ['read', 'читать'],
+  ['land', 'земля'],
+
+  ['big', 'большой'],
+  ['build', 'строить'],
+  ['work', 'работа'],
+
+  ['good', 'хороший'],
+  ['say', 'говорить'],
+  ['like', 'нравиться'],
 ])
 
 let spellingArray = []
@@ -80,14 +96,17 @@ function createButton(){
   }
 }
 createButton()
+const myAudioElement = new Audio('audio/zvuk-nopki-v-kompyuternoy-igre1.mp3')
+
+const wrapperToSpellingWord = document.querySelector('.wrapper-to-spelling__word')
+myAudioElement.volume = 0.3
 
 function randomSpellingWord(){
   // Нажатие на кнопку с буквой
-  const wrapperToSpellingWord = document.querySelector('.wrapper-to-spelling__word')
-
   let spellingletterButtons = document.querySelectorAll('.spelling__letter-button')
   spellingletterButtons.forEach(button =>{
     button.addEventListener('click', function(){
+      myAudioElement.play();
       let buttonTap = document.createElement('button')
       buttonTap.className = 'spelling__letter-button--tap'
       buttonTap.textContent = this.textContent
@@ -108,6 +127,8 @@ function randomSpellingWord(){
     let spellingKetterButtonTap = document.querySelectorAll('.spelling__letter-button--tap')
     spellingKetterButtonTap.forEach(buttonTap => {
       buttonTap.addEventListener('click', function(){
+        myAudioElement.play();
+
         if(thisLetter.textContent === this.textContent){
           button.classList.remove('inactive')
           spellingArray.pop(spellingArray.indexOf(this.textContent))

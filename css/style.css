@@ -57,9 +57,10 @@ hr{
 body{
 /*	font-family: 'Baloo 2', cursive;*/
 /*	font-family: 'Montserrat', sans-serif;*/
+
 	font-family: 'Montserrat Alternates', sans-serif;
 
-	background-color: #00C2FF;
+  background: linear-gradient(#141434, #423FCF);
 	color: #fff;
 	overflow-x: hidden;
 
@@ -113,22 +114,20 @@ body{
 
 .navigation__button{
 	color: #fff;
+  opacity: 0.6;
 	background-color: transparent;
 	text-transform: uppercase;
 	font-size: 20px;
-	padding: 10px;
 }
 
 .navigation__item:not(:last-child){
-	margin-bottom: 15px;
+	margin-bottom: 35px;
 }
 
 .navigation__button--active{
-	background-color: #0085FF;
-	border-radius: 50px;
 	color: #fff;
-	padding: 10px;
-	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  opacity: 1;
+	text-shadow: 0 0px 4px #fff;
 }
 
 /*Level*/
@@ -223,11 +222,11 @@ body{
 /*Button*/
 .button{
 	padding: 20px 60px;
-	background-color: #0085FF;
+	background-color: #181939;
 	color: #fff;
 	font-size: 24px;
 	border-radius: 50px;
-	box-shadow: 0 4px 0px #0072DB;
+	box-shadow: 0 3px 8px #000;
 	transition: all .1s linear;
 }
 
@@ -242,14 +241,13 @@ body{
 }
 
 .button:active{
-	background-color: #0072DB;
+	background-color: #111229;
 }
 
-.word{
-	box-shadow: 0 4px 0px #0072DB;
-
+.word, .translate__word--word, .spelling__letter-button{
 	padding: 17px 27px;
-	background-color: #0085FF;
+	background-color: #28007C;
+  opacity: 0.8;
 	border-radius: 30px;
 	color: #fff;
 	font-size: 20px;
@@ -266,12 +264,10 @@ body{
   transform: translate(1px, 1px);
 }
 
-.word-tap{
-	box-shadow: 0 4px 0px #00B2FF;
-
+.word-tap,  .translate__word--word-tap, .spelling__letter-button--tap{
 	padding: 17px 27px;
-	background-color: #00B2FF;
-	border: 1px solid #00D1FF;
+	background-color: #4200FF;
+	border: 1px solid #fff;
 	border-radius: 30px;
 	color: #fff;
 	font-size: 20px;
@@ -289,7 +285,7 @@ body{
 }
 
 /*Translate Word*/
-.translate__word--word{
+/* .translate__word--word{
 	box-shadow: 0 4px 0px #0072DB;
 
 	padding: 17px 27px;
@@ -299,7 +295,7 @@ body{
 	font-size: 20px;
 
 	transition: all .1s linear;
-}
+} */
 
 .translate__word--word:not(:last-child){
 	margin-right: 8px;
@@ -310,7 +306,7 @@ body{
   transform: translate(1px, 1px);
 }
 
-.translate__word--word-tap, .spelling__letter-button--tap{
+/* .translate__word--word-tap, .spelling__letter-button--tap{
 	box-shadow: 0 4px 0px #00B2FF;
 
 	padding: 17px 27px;
@@ -321,7 +317,7 @@ body{
 	font-size: 20px;
 
 	transition: all .1s linear;
-}
+} */
 
 .translate__word--word-tap:not(:last-child){
 	margin-right: 8px;
@@ -423,11 +419,11 @@ body{
   font-size: 20px;
 }
 
-.progress-bar__wrapper{
+/* .progress-bar__wrapper{
   margin: 0 auto;
   max-width: 700px;
   width: 40%;
-}
+} */
 
 .progress-line_bg{
   background-color: #00B2FF;
@@ -530,19 +526,7 @@ body{
 	margin-bottom: 20px;
 }
 
-/*Section Text*/
-.section-text{
-	overflow: hidden;
-	width: 100vw;
-	height: 0vh;
-	opacity: 0;
-
-	overflow: hidden;
-	transition: all .4s linear;
-  font-family: 'Baloo 2', cursive;
-  display: none;
-}
-
+/*SECTION STATE*/
 .section-active{
 	overflow: hidden;
 	opacity: 1;
@@ -555,71 +539,6 @@ body{
   display: none;
 }
 
-.section-text__text{
-  text-align: center;
-  margin: 0 auto;
-  width: 70vw;
-  font-size: 20px;
-  line-height: 1.2;
-  font-weight: 500;
-}
-
-.section-text__button-wrapper{
-	margin: 0 auto;
-	text-align: center;
-}
-
-.section-text__subject{
-  text-align: center;
-  margin-bottom: 10px;
-  font-size: 24px;
-  font-weight: 700;
-}
-
-.procent__text{
-  z-index: 100;
-  color: #fff;
-  position: relative;
-  font-family: 'Baloo 2', cursive;
-  font-size: 20px;
-}
-
-.progress-bar__wrapper-text{
-  margin: 0 auto;
-  max-width: 700px;
-  width: 40%;
-}
-
-.progress-bar--hidden{
-  display: none;
-}
-
-.progress-line_bg__text{
-  background-color: #00B2FF;
-  border-radius: 10px;
-
-  height: 20px;
-  width: 100%;
-
-  overflow: hidden;
-  position: relative;
-
-  text-align: center;
-}
-
-.progress-line__text{
-	background: linear-gradient(0.25turn, #0066FF, #0085FF);
-  color: #fff;
-  text-align: center;
-
-  border-radius: 50px;
-  bottom: 0;
-  left: 0;
-  top: 0;
-  position: absolute;
-  
-  transition: all 0.5s cubic-bezier(.95,-0.28,.44,.7);
-}
 
 /*answer*/
 .answer-options__container{
@@ -650,18 +569,6 @@ body{
 
 .spelling__letter-button:not(:last-child){
   margin-right: 10px;
-}
-
-.spelling__letter-button{
-	box-shadow: 0 4px 0px #0072DB;
-
-	padding: 17px 27px;
-	background-color: #0085FF;
-	border-radius: 30px;
-	color: #fff;
-	font-size: 20px;
-
-	transition: all .1s linear;
 }
 
 .spelling__letter-button:hover{
@@ -713,15 +620,15 @@ body{
 }
 
 /*Progress Bar Word*/
-.procent__word{
+.procent__word, .procent__spelling, .procent__phrases{
   z-index: 100;
-  color: #fff;
+  color: #111229;
   position: relative;
   font-family: 'Baloo 2', cursive;
   font-size: 20px;
 }
 
-.progress-bar__wrapper-word{
+.progress-bar__wrapper-word, .progress-bar__wrapper-spelling, .progress-bar__wrapper-phrases{
   margin: 0 auto;
   max-width: 700px;
   width: 40%;
@@ -731,9 +638,10 @@ body{
   display: none;
 }
 
-.progress-line_bg__word{
-  background-color: #00B2FF;
+.progress-line_bg__word, .progress-line_bg__spelling, .progress-line_bg__phrases{
+  background-color: #fff;
   border-radius: 10px;
+  font-weight: 600;
 
   height: 20px;
   width: 100%;
@@ -744,54 +652,8 @@ body{
   text-align: center;
 }
 
-.progress-line__word{
-	background: linear-gradient(0.25turn, #0066FF, #0085FF);
-  color: #fff;
-  text-align: center;
-
-  border-radius: 50px;
-  bottom: 0;
-  left: 0;
-  top: 0;
-  position: absolute;
-  
-  transition: all 0.5s cubic-bezier(.95,-0.28,.44,.7);
-}
-
-/*Progress Bar spelling*/
-.procent__spelling{
-  z-index: 100;
-  color: #fff;
-  position: relative;
-  font-family: 'Baloo 2', cursive;
-  font-size: 20px;
-}
-
-.progress-bar__wrapper-spelling{
-  margin: 0 auto;
-  max-width: 700px;
-  width: 40%;
-}
-
-.progress-bar--hidden{
-  display: none;
-}
-
-.progress-line_bg__spelling{
-  background-color: #00B2FF;
-  border-radius: 10px;
-
-  height: 20px;
-  width: 100%;
-
-  overflow: hidden;
-  position: relative;
-
-  text-align: center;
-}
-
-.progress-line__spelling{
-	background: linear-gradient(0.25turn, #0066FF, #0085FF);
+.progress-line__word, .progress-line__phrases, .progress-line__spelling{
+	background: linear-gradient(0.25turn, #4200FF, #8F00FF);
   color: #fff;
   text-align: center;
 
@@ -886,7 +748,6 @@ body{
 
 	height: 90vh;
 	z-index: 107;
-	background-color: #00C2FF;
 }
 
 .loading__procent{
@@ -958,6 +819,10 @@ body{
   height: 65px;
 }
 
+.empty{
+  cursor: none;
+}
+
 
 
 
@@ -981,6 +846,11 @@ body{
     overflow-x: hidden;
   }
 
+  .section__header {
+    margin-bottom: 90px;
+    padding-top: 50px;
+  }
+
   .navigation {
     display: none;
   }
@@ -997,6 +867,11 @@ body{
   .translate__word--word{
     padding: 10px 20px;
     margin-bottom: 10px;
+  }
+
+  .wrapper-to-spelling__word, .wrapper-to-translate__word, .wrapper-to-translate {
+    height: 60px;
+    margin-bottom: 50px;
   }
 
   .translate__word--word:not(:last-child) {
@@ -1025,9 +900,10 @@ body{
     margin-right: 2px;
   }
 
-  .progress-bar__wrapper{
+  .progress-bar__wrapper-word, .progress-bar__wrapper-spelling, .progress-bar__wrapper-phrases {
     width: 80%;
   }
+
 
   .word:not(:last-child) {
     margin-right: 2px;
@@ -1036,11 +912,6 @@ body{
   .alerts {
     width: 90vw;
   }
-
-  .progress-bar__wrapper-word{
-    width: 80%;
-  }
-
   .exit-icon {
     width: 22px;
   }
@@ -1130,4 +1001,60 @@ body{
   .navigation__button{
     font-size: 16px;
   }
+}
+
+
+
+
+
+
+
+.swiper {
+  width: 100%;
+  padding-top: 50px;
+}
+
+.swiper-slide {
+  position: relative;
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+  width: 350px;
+  height: 450px;
+  background: linear-gradient(#0047FF, #3C5AC4);
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.swiper-slide::before{
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url('../pictures/illustrations/rentagle.png') center no-repeat;
+  background-size: contain;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.swiper-slide__title{
+  font-size: 25px;
+}
+
+.swiper-slide__text{
+  z-index: 1;
+  font-size: 16px;
+  padding: 35px;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
+.counter{
+  position: absolute;
+  left: 50%;
+  bottom: 0%;
+  font-size: 15px;
+  transform: translate(-50%,-50%);
 }

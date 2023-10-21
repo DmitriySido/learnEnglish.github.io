@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"/>
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
 	<link rel="stylesheet" href="css/style.css">
 
 	<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700&family=Montserrat+Alternates:wght@600&family=Montserrat:wght@200;400;500;700;900&display=swap"rel="stylesheet">
@@ -56,7 +58,7 @@
 				</li>
 			</ul>
 		</nav>	
-		<div class="container">
+		<!-- <div class="container">
 			<section class="level level-1">
 				<h1 class="level__title">Уровнь А1 - Начинающий</h1>
 
@@ -75,22 +77,42 @@
 						<h3 class="task__title">Перевод Фраз</h3>
 						<span class="phrase-translation__counter counter">0/10</span>
 					</button>
-
-					<button class="task__button" id="remember-text">
-						<h3 class="task__title">Текста</h3>
-						<span class="text-remember__counter counter">0/7</span>
-					</button>
-
-					<button class="task__button task__button-empty" disabled>
-						<h3 class="task__title">Недоступно</h3>
-					</button>
-
-					<button class="task__button task__button-empty" disabled>
-						<h3 class="task__title">Недоступно</h3>
-					</button>
 				</div>
 			</section>
-		</div>
+		</div> -->
+    <div class="container">
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide" id="phrase-translation">
+            <h2 class="swiper-slide__title">Переведи фразу</h2>
+            <p class="swiper-slide__text">Вам даётся случайная фраза и слова с переводом этой фразы. Вам нужно собрать фразу по словам в правильной последовательности</p>
+                
+            <p class="counter phrase-translation__counter">0/10</p>
+          </div>
+        
+          <div class="swiper-slide" id="translation-of-words">
+            <h2 class="swiper-slide__title">Переведи Слово</h2>
+            <p class="swiper-slide__text">Вам даётся случайное слово и 4 варианта перевода этого слова, вам нужно выбрать парвильный вариант</p>
+                
+            <p class="counter word-translation__counter">0/15</p>
+          </div>
+              
+          <div class="swiper-slide" id="spelling">
+            <h2 class="swiper-slide__title">Орфография</h2>
+            <p class="swiper-slide__text">Вам даётся случайное слово которое нужно правильно собрать по буквам</p>
+                
+            <p class="counter spelling-counter">0/20</p>
+          </div>
+
+          <div class="swiper-slide empty" id="text">
+            <h2 class="swiper-slide__title">Чтение</h2>
+            <p class="swiper-slide__text">НЕДОСТУПНО</p>
+            
+            <p class="counter spelling-counter">0/7</p>
+          </div>
+        </div>
+      </div>
+    </div>
 	</main>
 
 	<section class="section-phrases section-hidden">
@@ -99,18 +121,18 @@
 					<img class="exit-icon" src="pictures/icons/exit-button.png" alt="Exit">
 				</button>
 
-				<div class="progress-bar__wrapper">
+				<div class="progress-bar__wrapper-phrases">
 					<div class="progress-bar">
-						<div class="progress-line_bg">
-							<span class="procent">0%</span>
-							<div class="progress-line" id="progress-line"></div>
+						<div class="progress-line_bg__phrases">
+							<span class="procent__phrases">0%</span>
+							<div class="progress-line__phrases" id="progress-line__phrases"></div>
 						</div>
 					</div>
 				</div>
 			</header>
 
 			<div class="phrases__wrapper">
-				<h1 class="translate-text">Переведите текст</h1>
+				<h1 class="translate-text">Переведите фразу</h1>
 				<h2 class="translate-app"></h2>
         <div class="wrapper-to-translate"></div>
 
@@ -149,11 +171,11 @@
 				<img class="exit-icon" src="pictures/icons/exit-button.png" alt="Exit">
 			</button>
 
-			<div class="progress-bar__wrapper-word">
-				<div class="progress-bar__word">
-					<div class="progress-line_bg__word">
-						<span class="procent__spelling procent__word">0%</span>
-						<div class="progress-line__word" id="progress-line__spelling"></di>
+			<div class="progress-bar__wrapper-spelling">
+				<div class="progress-bar__spelling">
+					<div class="progress-line_bg__spelling">
+						<span class="procent__spelling">0%</span>
+						<div class="progress-line__spelling" id="progress-line__spelling"></di>
 					</div>
 				</div>
 			</div>
@@ -176,56 +198,13 @@
 			<button class="button next-button__spelling" disabled>Продолжить</button>
 		</div>
   </section>
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  
+  <script src="js/loading.js"></script>
 
-  <section class="section-text section-hidden">
-    <header class="section__header">
-			<button class="exit-button exit-button__text">Exit
-				<img class="exit-icon" src="pictures/icons/exit-button.png" alt="Exit">
-			</button>
-
-			<div class="progress-bar__wrapper-text progress-bar--hidden">
-				<div class="progress-bar__text">
-					<div class="progress-line_bg__text">
-						<span class="procent__text">0%</span>
-						<div class="progress-line__text" id="progress-line__text"></di>
-					</div>
-				</div>
-			</div>
-		</header>
-    
-    <!-- <div class="section-text__content">
-      <h2 class="section-text__subject">My Wonderful Family</h2>
-      <p class="section-text__text">
-        I live in a house near the mountains.
-        I have two brothers and one sister, and I was born last.
-        My father teaches mathematics, and my mother is a nurse at a big hospital.
-        My brothers are very smart and work hard in school. My sister is a nervous girl,
-        but she is very kind. My grandmother also lives with us.
-        She came from Italy when I was two years old. She has grown
-        old, but she is still very strong. She cooks the best food!
-        My family is very important to me. We do lots of things
-        together. My brothers and I like to go on long walks
-        in the mountains. My sister likes to cook with my grandmother.
-        On the weekends we all play board games together.
-        We laugh and always have a good time.
-        I love my family very much.
-      </p>
-      
-      <div class="section-text__button-wrapper">
-        <button class="button start-button">Перейти к тесту</button>
-      </div>
-   </div> -->
-   
-   <div class="answer-options__container answer-options--hidden">
-    <h3 class="answer-question-text"></h3>
-   </div>
-  </section>
-
-	<script src="js/phrases.js"></script>
+  <script src="js/phrases.js"></script>
 	<script src="js/word.js"></script>
-  <!-- <script src="js/texts.js"></script> -->
   <script src="js/spelling.js"></script>
-
-	<script src="js/loading.js"></script>
 </body>
 </html>

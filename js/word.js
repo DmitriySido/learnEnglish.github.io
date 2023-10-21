@@ -135,6 +135,7 @@ function wordButtonListener(){
   const allButtonsWord = document.querySelectorAll('.translate__word--word')
   allButtonsWord.forEach(button =>{
     button.addEventListener('click', function(){
+      myAudioElement.play();
       allButtonsWord.forEach(btn =>{
         btn.disabled = true
       })
@@ -153,7 +154,7 @@ function wordButtonListener(){
       tapButton.addEventListener('click', function(){
         this.remove()
         button.classList.remove('inactive')
-
+        myAudioElement.play();
         allButtonsWord.forEach(btn =>{
           btn.disabled = false
           nextButtonWord.disabled = true

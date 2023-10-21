@@ -106,16 +106,11 @@ function createCeill(application){
 	// translateApp.after(wrapperWordsTranslate)
 }
 
-//Удаление всех ячеек со словами
-function removeAllCeills(){
-	// wrapperWordsTranslate.remove()
-  console.log('yes')
-}
-
 //Удаление слов
 function removeCeill(thisWord, thisButton){
 	thisWord.forEach(word =>{
 		word.addEventListener('click', function(){
+      myAudioElement.play();
 			if(thisButton.textContent === this.textContent){
 				thisButton.disabled = false
 				thisButton.classList.remove('inactive')
@@ -156,6 +151,7 @@ function listenerClickOnButton(){
 	let buttons = document.querySelectorAll('.word')
 	buttons.forEach(button => {
 		button.addEventListener('click', function(event){
+      myAudioElement.play();
 			event.preventDefault()
 			this.classList.add('inactive')
 			tapToButton = this.textContent
@@ -179,10 +175,10 @@ if(progressData.phrasesProgress < 10){
 
 //Progress Bar
 let click = 0
-let procent = document.querySelector('.procent')
+let procent = document.querySelector('.procent__phrases')
 
 function progress(){
-  let elem = document.querySelector('#progress-line')
+  let elem = document.querySelector('#progress-line__phrases')
   let width = click
 
   function phrasesButtonState(state){
@@ -254,7 +250,6 @@ nextButtonPhrases.addEventListener('click', function(){
 	document.querySelectorAll('.word-tap').forEach(btn => btn.remove())
 
 	removeWord()
-	removeAllCeills()
 
 	//String in array
 	translateApp.textContent = item.rus
